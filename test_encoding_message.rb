@@ -17,5 +17,11 @@ class Encoding_test < Minitest::Test
 		assert_equal(Array, convert(message).class)
 	end
 
+	def test_return_array_of_numbers_representing_ascii_code
+		message = "a"
+		assert_equal([97], convert(message))
+	end
+
+
 
 end
