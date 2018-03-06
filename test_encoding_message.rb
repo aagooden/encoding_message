@@ -41,4 +41,17 @@ class Encoding_test < Minitest::Test
 		message = "abcdefg"
 		assert_equal("fghijkl", encode(message))
 	end
+
+	def test_return_array_of_multiple_numbers_minus_5
+		message = [102,103,104]
+		assert_equal([97, 98, 99], unshift(message))
+	end
+
+	def test_return_decoded_message_when_given_encoded_message
+		message = "fgh"
+		assert_equal("abc", decode(message))
+	end
+
+
+
 end
