@@ -27,7 +27,15 @@ class Encoding_test < Minitest::Test
 		assert_equal([97, 98, 99], convert(message))
 	end
 
+	def test_return_array_of_multiple_numbers_plus_5
+		message = [97,98,99]
+		assert_equal([102, 103, 104], shift(message))
+	end
 
+	def test_return_string_abc_when_given_97_98_99
+		message = [97,98,99]
+		assert_equal("abc", secret_message(message))
+	end
 
 
 end
