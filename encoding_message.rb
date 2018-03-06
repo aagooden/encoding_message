@@ -1,5 +1,8 @@
 def encode(string)
-	string
+	converted = convert(string)
+	shifted = shift(converted)
+	secret = secret_message(shifted)
+	return secret
 end
 
 def convert(string)
@@ -36,3 +39,5 @@ def secret_message(array)
 	end
 	return message
 end
+
+

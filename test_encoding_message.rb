@@ -37,5 +37,8 @@ class Encoding_test < Minitest::Test
 		assert_equal("abc", secret_message(message))
 	end
 
-
+	def test_return_string_efg_give_abc
+		message = "abcdefg"
+		assert_equal("fghijkl", encode(message))
+	end
 end
