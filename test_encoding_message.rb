@@ -67,5 +67,8 @@ class Encoding_test < Minitest::Test
 		assert_equal(["fgh", "ijk"], encode_messages_from_array(message))
 	end
 
-
+	def test_decode_messages_from_array
+		message = ["fgh", "ijk"]
+		assert_equal(["abc", "def"], decode_messages_from_array(message))
+	end
 end

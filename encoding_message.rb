@@ -36,6 +36,17 @@ def encode_messages_from_array(array)
 	return encoded_array
 end
 
+def decode_messages_from_array(array)
+	decoded_array = []
+	array_message = ""
+	for x in (0...array.length)
+		array_message = array[x]
+		array_message = decode(array_message)
+		decoded_array.push(array_message)
+	end
+	return decoded_array
+end
+
 
 def convert(string)
 	array = []
