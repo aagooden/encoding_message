@@ -54,15 +54,18 @@ class Encoding_test < Minitest::Test
 
 	def test_return_message_encoded_by_day_of_month
 		message = "abc"
-		assert_equal("ghi", encode_day_month(message))
+		assert_equal("hij", encode_day_month(message))
 	end
 
 	def test_return_message_decoded_by_day_of_month
-		message = "ghi"
+		message = "hij"
 		assert_equal("abc", decode_day_month(message))
 	end
 	
-
+	def test_encode_messages_from_array
+		message = ["abc", "def"]
+		assert_equal(["fgh", "ijk"], encode_messages_from_array(message))
+	end
 
 
 end
