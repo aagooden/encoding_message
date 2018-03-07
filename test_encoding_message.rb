@@ -52,6 +52,8 @@ class Encoding_test < Minitest::Test
 		assert_equal("abc", decode(message))
 	end
 
+	
+
 
 
 end
