@@ -5,9 +5,22 @@ def encode(string)
 	return secret
 end
 
+def encode_day_month(string)
+	converted = convert(string)
+	shifted = shift_day_month(converted)
+	secret = secret_message(shifted)
+	return secret
+end
+
 def decode(string)
 	converted = convert(string)
 	unshifted = unshift(converted)
+	secret = secret_message(unshifted)
+end
+
+def decode_day_month(string)
+	converted = convert(string)
+	unshifted = unshift_day_month(converted)
 	secret = secret_message(unshifted)
 end
 
@@ -24,12 +37,24 @@ def convert(string)
 end
 
 def shift(array)
-	# time = Time.new
-	# day = time.day
 	x = 0
 	shifted_array = []
 	array.length.times do
 		conv = array[x] + 5
+	shifted_array.push(conv)
+	x += 1
+	end
+return shifted_array
+
+end
+
+def shift_day_month(array)
+	time = Time.new
+	day = time.day
+	x = 0
+	shifted_array = []
+	array.length.times do
+		conv = array[x] + day
 	shifted_array.push(conv)
 	x += 1
 	end
@@ -49,12 +74,24 @@ def secret_message(array)
 end
 
 def unshift(array)
-	# time = Time.new
-	# day = time.day
 	x = 0
 	shifted_array = []
 	array.length.times do
 		conv = array[x] - 5
+	shifted_array.push(conv)
+	x += 1
+	end
+return shifted_array
+
+end
+
+def unshift_day_month(array)
+	time = Time.new
+	day = time.day
+	x = 0
+	shifted_array = []
+	array.length.times do
+		conv = array[x] - day
 	shifted_array.push(conv)
 	x += 1
 	end
